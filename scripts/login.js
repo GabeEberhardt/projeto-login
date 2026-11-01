@@ -55,6 +55,7 @@ let atual = 0;
 let camadaAtiva = 0;
 let falhas = 0;
 let timer = null;
+let pedido = 0;
 
 function caminho(slide) {
     return PASTA + (consulta.matches ? slide.desktop : slide.mobile) + EXTENSAO;
@@ -70,8 +71,10 @@ function aplicarCores(cores) {
 function mostrar(indice) {
     const slide = SLIDES[indice];
     const url = caminho(slide);
+    const meu = ++pedido;
     const img = new Image();
     img.onload = () => {
+        if (meu !== pedido) return;
         falhas = 0;
         const proxima = 1 - camadaAtiva;
         camadas[proxima].style.backgroundImage = `url("${url}")`;
@@ -83,6 +86,7 @@ function mostrar(indice) {
         aplicarCores(slide.cores);
     };
     img.onerror = () => {
+        if (meu !== pedido) return;
         console.warn('Imagem não encontrada:', url);
         falhas++;
         if (falhas < SLIDES.length) mostrar((indice + 1) % SLIDES.length);

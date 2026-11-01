@@ -36,7 +36,7 @@
 body, html {
     background-color: var(--fundo-a);
     height: 100vh;
-    width: 100vw;
+    width: 100%;
 }
 
 body {
@@ -46,7 +46,7 @@ body {
 main {
     position: relative;
     height: 100vh;
-    width: 100vw;
+    width: 100%;
 }
 
 section#login {
@@ -57,6 +57,7 @@ section#login {
 
     background-color: white;
     width: 250px;
+    max-width: calc(100% - 20px);
     height: 515px;
     border-radius: 20px;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.450);
