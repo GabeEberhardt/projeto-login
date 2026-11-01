@@ -7,13 +7,12 @@ Celular: de 600px até 768px
 Tablet: 768px até 992px
 Desktop: 992px até 1200px
 Grandes telas: acima de 1200px
+
+O fundo (gradiente) agora vem do style.css e muda com a imagem.
+O scripts/login.js usa o conjunto "desktop" de imagens a partir de 768px.
 */
 
 @media screen and (min-width: 768px) and (max-width: 992px) { /* CONFIGURAÇÃO PARA TABLET */
-    body {
-        background-image: linear-gradient(to top, #49a09d, #5f2c82);
-    }
-
     section#login {
         width: 80vw;
         height: 280px;
@@ -32,10 +31,6 @@ Grandes telas: acima de 1200px
 }
 
 @media screen and (min-width: 992px) { /* CONFIGURAÇÕES PARA DESKTOP */
-    body {
-        background-image: linear-gradient(to top, #49a09d, #5f2c82);
-    }
-
     section#login {
         width: 950px;
         height: 350px;
